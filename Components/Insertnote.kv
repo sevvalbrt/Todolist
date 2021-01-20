@@ -1,0 +1,159 @@
+<Insertnote>:
+    GridLayout:
+        cols:1
+        canvas:
+            Color:
+                rgb: hex('#3b5d66')
+            Rectangle:
+                pos:self.pos
+                size:self.size
+
+        Menu:
+            #size_hint:(.1,.1)
+            pos_hint:{'top',1}
+        BoxLayout:
+            orientation:'vertical'
+            canvas:
+                Color:
+                    rgb:hex('#3b5d66')
+                Rectangle:
+                    pos:self.pos
+                    size:self.size
+
+
+            LeftLabel:
+                text:"Subject"
+                bold:True
+                italic:True
+                halign:'center'
+            TextInput:
+                id:ti_subject
+                multiline:False
+                size_hint_y:.6
+                size_hint_x:.6
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                hint_text:'Subject'
+                focus:True
+                write_tab:False
+
+            BoxLayout:
+                size_hint_y:.5
+
+            LeftLabel:
+                text:"Note"
+                bold:True
+                italic:True
+                halign:'center'
+            TextInput:
+                id:ti_note
+                size_hint_y:1
+                size_hint_x:.6
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                hint_text:'Note'
+                focus:True
+                write_tab:False
+
+            BoxLayout:
+                size_hint_y:.5
+
+            BoxLayout:
+                orientation:'horizontal'
+                canvas:
+                    Color:
+                        rgb:hex('#3b5d66')
+                    Rectangle:
+                        size:self.size
+                        pos:self.pos
+                BoxLayout:
+                    Label:
+                        size_hint_x:.4
+                    BoxLayout:
+                        Label:
+                            size_font:self.width*0.4
+                            size_hint:None,None
+                            text:"Clock"
+                            size_hint_y:1
+                            bold:True
+                            italic:True
+
+                        Spinner:
+                            id:hour
+                            size_hint:None,None
+                            width:60
+                            height:50
+                            values: '00', '01', '02', '03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'
+
+                        Label:
+                            text:":"
+                            bold:True
+                            font_size:20
+                            size_hint:None,None
+                            width:10
+                            height:50
+
+                        Spinner:
+                            id:minute
+                            size_hint:None,None
+                            width:60
+                            height:50
+                            values: '00', '01', '02', '03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59'
+            BoxLayout:
+                size_hint_y:.5
+            BoxLayout:
+                size_hint_y:0.9
+                canvas:
+                    Color:
+                        rgb:hex("#3b5d66")
+                    Rectangle:
+                        size:self.size
+                        pos:self.pos
+                BoxLayout:
+                    Label:
+                        size_hint_x:.4
+                    BoxLayout:
+                        Label:
+                            size_hint:None,None
+                            size_font:self.width*0.4
+                            size_hint_y:1
+                            text:"Date"
+                            bold:True
+                            italic:True
+
+                        Spinner:
+                            id:day
+                            size_hint:None,None
+                            width:60
+                            height:50
+                            values: '01', '02', '03', '04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'
+
+                        Label:
+                            text:"/"
+                            bold:True
+                            font_size:20
+                            size_hint:None,None
+                            width:10
+                            height:50
+
+                        Spinner:
+                            id:month
+                            size_hint:None,None
+                            width:60
+                            height:50
+                            values: '01', '02', '03', '04','05','06','07','08','09','10','11','12'
+
+            BoxLayout:
+                size_hint_y:1
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgb:hex('#1c2833')
+                    Rectangle:
+                        size:self.size
+                        pos:self.pos
+
+                Button:
+                    text:'Add'
+                    background_color:hex('#223d55')
+                    bold:True
+                    italic:True
+                    on_press:root.insert_note()

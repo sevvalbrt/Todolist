@@ -1,0 +1,37 @@
+<NotePage>:
+    note:''
+    note_id:''
+    canvas:
+        Color:
+            rgb:hex('#2e3c45')
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    Label:
+        size_hint_x:0.5
+        size_font:self.width*0.4
+        text:root.note
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+    Button:
+        size_hint_x:0.1
+        on_press:root.update_note(root.note_id)
+        background_color: hex('#305070')
+        Image:
+            source:"Images/edit.png"
+            x:self.parent.x+33
+            y:self.parent.y+30
+            size:45,45
+            allow_stretch:True
+    Button:
+        size_hint_x:0.1
+        on_press:root.popup(root.note_id)
+
+        background_color: hex('#305070')
+        Image:
+            source:"Images/delete.png"
+            x:self.parent.x+30
+            y:self.parent.y+30
+            size:45,45
+            allow_stretch:True

@@ -1,0 +1,42 @@
+#:import utils kivy.utils
+<Menu>:
+    userId:''
+    canvas:
+        Color:
+            rgb:hex('#1c2833')
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    ActionView:
+        use_seperate: True
+        ActionPrevious:
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            italic:True
+            font_size:15
+            with_previous: False
+            app_icon:"Images/back.png"
+            on_press:root.goto_notes()
+        ActionOverflow:
+        ActionButton:
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            icon:"Images/add.png"
+            on_press:root.insert_note()
+
+        ActionButton:
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            icon:"Images/account.png"
+            on_press:root.update_user(root.userId)
+
+        ActionButton:
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            icon:"Images/exit.png"
+            on_press:root.logout()
+
+
+
+
+
+
+
+
+

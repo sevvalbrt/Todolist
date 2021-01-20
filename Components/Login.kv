@@ -1,0 +1,93 @@
+#:import hex kivy.utils.get_color_from_hex
+#:import utils kivy.utils
+
+<LeftLabel@Label>:
+    text_size:self.size
+    halign:'left'
+
+<Login>:
+    TabbedPanel:
+        do_default_tab:False
+        tab_width: self.parent.width / 2
+        canvas:
+            Color:
+                rgb:hex('#3b5d66')
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        TabbedPanelItem:
+            text:'Sign In'
+            bold:True
+            italic:True
+            background_color:hex('#516484')
+            BoxLayout:
+                orientation:'vertical'
+                canvas:
+                    Color:
+                        rgb:hex('#3b5d66')
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+
+                BoxLayout:
+                    size_hint_y:1.5
+                Image:
+                    source:("Images/login.png")
+                    size_hint:None,None
+                    pos_hint:{"center_x":0.5,"center_y":0.5}
+
+                BoxLayout:
+                    size_hint_y:.8
+
+                TextInput:
+                    size_hint_y:.7
+                    size_hint_x:.5
+                    pos_hint:{"center_x":0.5,"center_y":0.5}
+                    id:ti_username
+                    multiline:False
+                    hint_text:'User Name'
+                    on_text_validate:root.login()
+                    focus:True
+                    write_tab:False
+
+                BoxLayout:
+                    size_hint_y:1
+
+                TextInput:
+                    size_hint_y:.7
+                    size_hint_x:.5
+                    id:ti_password
+                    multiline:False
+                    pos_hint:{"center_x":0.5,"center_y":0.5}
+                    write_tab:False
+                    hint_text:'Password'
+                    password:True
+                    on_text_validate:root.login()
+
+                BoxLayout:
+                    size_hint_y:2
+
+                BoxLayout:
+                    canvas:
+                        Color:
+                            rgb:hex('#1c2833')
+                        Rectangle:
+                            size:self.size
+                            pos:self.pos
+
+                    Button:
+                        text:'Sign In'
+                        size_hint_y:1
+                        bold:True
+                        italic:True
+                        on_press:root.login()
+                        background_color:hex('#223d55')
+
+
+        TabbedPanelItem:
+            text:'Sign Up'
+            background_color:hex('#516484')
+            bold:True
+            italic:True
+            id:signup
+            InsertUser:

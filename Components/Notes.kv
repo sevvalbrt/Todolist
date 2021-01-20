@@ -1,0 +1,24 @@
+<Notes>:
+    GridLayout:
+        cols:1
+        canvas:
+            Color:
+                rgb: hex('#3b5d66')
+            Rectangle:
+                pos:self.pos
+                size:self.size
+
+        Menu:
+            #size_hint:(.1,.1)
+            pos_hint:{'top',1}
+
+        ScrollView:
+            size:self.size
+            GridLayout:
+                id: container
+                padding:[10,10,10,10]
+                spacing:5
+                size_hint_y:None
+                cols:1
+                row_default_height:root.height*0.2
+                height:self.minimum_height

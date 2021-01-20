@@ -1,0 +1,97 @@
+<UpdateUser>:
+    personId:''
+    GridLayout:
+        cols:1
+        canvas:
+            Color:
+                rgb: hex('#3b5d66')
+            Rectangle:
+                pos:self.pos
+                size:self.size
+        Menu:
+            pos_hint:{'top',1}
+        BoxLayout:
+            orientation:'vertical'
+            canvas:
+                Color:
+                    rgb:hex('#3b5d66')
+                Rectangle:
+                    pos:self.pos
+                    size:self.size
+
+            LeftLabel:
+                text:"Your Name"
+                bold:True
+                italic:True
+                halign:"center"
+            TextInput:
+                id:ti_name
+                multiline:False
+                size_hint_y:.6
+                size_hint_x:.6
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                hint_text:'Your Name'
+
+            BoxLayout:
+                size_hint_y:.1
+
+            LeftLabel:
+                text:"Your Last Name"
+                bold:True
+                italic:True
+                halign:"center"
+            TextInput:
+                id:ti_lastname
+                multiline:False
+                size_hint_y:.6
+                size_hint_x:.6
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                hint_text:'Your Lastname'
+
+            BoxLayout:
+                size_hint_y:.1
+
+            LeftLabel:
+                text:"Your User Name"
+                bold:True
+                italic:True
+                halign:"center"
+            TextInput:
+                id:ti_username
+                multiline:False
+                size_hint_y:.6
+                size_hint_x:.6
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                hint_text:'User Name'
+
+            BoxLayout:
+                size_hint_y:.1
+
+            LeftLabel:
+                text:"Your Password"
+                bold:True
+                italic:True
+                halign:"center"
+            TextInput:
+                id:ti_password
+                multiline:False
+                size_hint_y:.6
+                size_hint_x:.6
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                hint_text:'Password'
+
+            BoxLayout:
+                size_hint_y:1
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgb:hex('#1c2833')
+                    Rectangle:
+                        size:self.size
+                        pos:self.pos
+                Button:
+                    text:'Update'
+                    bold:True
+                    background_color:hex('#223d55')
+                    italic:True
+                    on_press:root.update_user()

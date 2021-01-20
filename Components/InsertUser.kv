@@ -1,0 +1,90 @@
+<InsertUser>:
+    BoxLayout:
+        orientation:'vertical'
+        canvas:
+            Color:
+                rgb:hex('#3b5d66')
+            Rectangle:
+                pos:self.pos
+                size:self.size
+
+        BoxLayout:
+            size_hint_y:.8
+
+        Image:
+            source:("Images/signup.png")
+            size_hint:None,None
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+
+        BoxLayout:
+            size_hint_y:.4
+
+        TextInput:
+            id:ti_name
+            multiline:False
+            size_hint_y:.7
+            size_hint_x:.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            hint_text:'Name'
+            focus:True
+            write_tab:False
+
+        BoxLayout:
+            size_hint_y:.8
+
+        TextInput:
+            id:ti_lastname
+            multiline:False
+            size_hint_y:.7
+            size_hint_x:.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            hint_text:'Last Name'
+            focus:True
+            write_tab:False
+
+        BoxLayout:
+            size_hint_y:.8
+
+        TextInput:
+            id:ti_username
+            multiline:False
+            size_hint_y:.7
+            size_hint_x:.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            hint_text:'User Name'
+            focus:True
+            write_tab:False
+
+        BoxLayout:
+            size_hint_y:.8
+
+        TextInput:
+            id:ti_password
+            multiline:False
+            size_hint_y:.7
+            size_hint_x:.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            password:True
+            hint_text:'Password'
+            focus:True
+            write_tab:False
+
+        BoxLayout:
+            size_hint_y:.8
+
+        BoxLayout:
+            canvas:
+                Color:
+                    rgb:hex('#1c2833')
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+            Button:
+                text:'Sign Up'
+                bold:True
+                italic:True
+                background_color:hex('#223d55')
+                size_hint_y:1
+                on_press:
+                    root.insert_user()
+                    root.cleartext()
